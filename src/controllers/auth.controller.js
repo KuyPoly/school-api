@@ -24,7 +24,8 @@ dotenv.config();
  *               name:
  *                 type: string
  *               email:
- *                 type: string
+ *                 type: string 
+ *                 format: email
  *               password:
  *                 type: string
  *     responses:
@@ -70,7 +71,8 @@ export const register = async (req, res) => {
  *               - password
  *             properties:
  *               email:
- *                 type: string
+ *                 type: string 
+ *                 format: email
  *               password:
  *                 type: string
  *     responses:
