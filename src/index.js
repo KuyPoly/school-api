@@ -7,13 +7,17 @@ import { serveSwagger, setupSwagger } from './config/swagger.js';
 import jwt from 'jsonwebtoken';
 import authRouter from './routes/auth.routes.js';
 import { authenticateToken } from './controllers/auth.controller.js';
+import cors from 'cors';
 dotenv.config();
-
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}));
 
 app.use('/docs', serveSwagger, setupSwagger);
 app.use('/auth', authRouter);
