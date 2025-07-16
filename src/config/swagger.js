@@ -9,6 +9,16 @@ const options = {
             version: '1.0.0',
             description: 'API for managing students, courses, and teachers',
         },
+        components: {
+            securitySchemes: {
+                bearerAuth: {
+                    type: 'http',
+                    scheme: 'bearer',
+                    bearerFormat: 'JWT',
+                }
+            }
+        },
+        security: [{ bearerAuth: [] }]
     },
     apis: ['**/controllers/*.js'],
 };
